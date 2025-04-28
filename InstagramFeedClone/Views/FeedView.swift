@@ -10,7 +10,6 @@ struct FeedView: View {
     @StateObject private var viewModel = FeedViewModel()
 
     var body: some View {
-        NavigationStack{
             NavigationStack{
                 ScrollView (showsIndicators: false){
                     LazyVStack{
@@ -24,10 +23,10 @@ struct FeedView: View {
                         await viewModel.loadPosts()
                     }
                 }
+                .navigationTitle("Instagram")
 
             }
-            .navigationTitle("Instagram")
-        }
+        
         
     }
 }
